@@ -31,16 +31,22 @@ export function WaitlistForm() {
         body: JSON.stringify({ email: email.trim() })
       });
 
-      const payload = (await response.json()) as { message?: string };
+      const payload = (await response.json()) as { ok?: boolean; message?: string; error?: string };
 
       if (!response.ok) {
         setState("error");
-        setMessage(payload.message ?? "Unable to join waitlist. Please try again.");
+        setMessage(payload.error ?? payload.message ?? "Unable to join waitlist. Please try again.");
+        return;
+      }
+
+      if (!payload.ok) {
+        setState("error");
+        setMessage(payload.error ?? "Unable to join waitlist. Please try again.");
         return;
       }
 
       setState("success");
-      setMessage("You are on the waitlist. We will notify you before launch.");
+      setMessage(payload.message ?? "You are on the waitlist. We will notify you before launch.");
       setEmail("");
     } catch {
       setState("error");
@@ -71,17 +77,11 @@ export function WaitlistForm() {
         </Button>
       </div>
       {message ? (
-        <p
-          className={`text-sm ${
-            state === "success" ? "text-success" : state === "error" ? "text-danger" : "text-muted"
-          }`}
-          role="status"
-        >
+        <p className={`text-sm ${state === "success" ? "text-success" : "text-danger"}`} role="status">
           {message}
         </p>
-      ) : (
-        <p className="text-xs text-muted">Launching Q3 2026. Enterprise early-access invitations only.</p>
-      )}
+      ) : null}
+      <p className="text-xs text-[#c9d7f8]">No spam. Your email stays private.</p>
     </form>
   );
 }
