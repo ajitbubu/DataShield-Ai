@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 85" role="img" aria-label="DataShield-AI wordmark">
+  <style>
+    .w {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+    }
+  </style>
+
+  <rect width="430" height="85" rx="24" fill="#F7F9FC" />
+  <text x="0" y="50" class="w" font-size="64" font-weight="850" fill="#1E2A78" letter-spacing="0.2">
+    DataShield<tspan fill="#18B6A4" font-weight="900">-AI</tspan>
+  </text>
+  <text x="70" y="75" class="w" font-size="20" font-weight="650" fill="#3B82F6" opacity="0.85">
+    Detect. Enforce. Prove.
+  </text>
+</svg>

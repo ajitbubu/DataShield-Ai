@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1e2a78;
+  --color-accent: #18b6a4;
+  --color-highlight: #3b82f6;
+  --color-background: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #475569;
+  --color-border: #e2e8f0;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-feature-settings: "ss01" on;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
+main {
+  min-height: calc(100vh - 8rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@keyframes dps-float-a {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(0px, -10px, 0px);
+  }
+}
+
+@keyframes dps-float-b {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(6px, -12px, 0px);
+  }
+}
+
+@keyframes dps-float-c {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-5px, -8px, 0px);
+  }
+}
+
+@keyframes dps-float-d {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(5px, -9px, 0px);
+  }
+}
+
+@keyframes dps-float-e {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-4px, -11px, 0px);
+  }
+}
+
+@keyframes dps-float-f {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(0px, -7px, 0px);
+  }
+}
+
+@keyframes dps-float-g {
+  0%,
+  100% {
+    transform: translate3d(-50%, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-50%, -12px, 0px);
+  }
+}
+
+@keyframes dps-float-h {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(3px, -8px, 0px);
+  }
+}
+
+@keyframes dps-ticker {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes dps-shimmer {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(330%);
+  }
+}
+
+@keyframes dps-twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.2);
+  }
+}
+
+.dps-float-a {
+  animation: dps-float-a 11s ease-in-out infinite;
+}
+
+.dps-float-b {
+  animation: dps-float-b 13s ease-in-out infinite;
+}
+
+.dps-float-c {
+  animation: dps-float-c 10s ease-in-out infinite;
+}
+
+.dps-float-d {
+  animation: dps-float-d 12s ease-in-out infinite;
+}
+
+.dps-float-e {
+  animation: dps-float-e 12.5s ease-in-out infinite;
+}
+
+.dps-float-f {
+  animation: dps-float-f 10.5s ease-in-out infinite;
+}
+
+.dps-float-g {
+  animation: dps-float-g 14s ease-in-out infinite;
+}
+
+.dps-float-h {
+  animation: dps-float-h 9.5s ease-in-out infinite;
+}
+
+.dps-ticker-track {
+  animation: dps-ticker 18s linear infinite;
+}
+
+.dps-progress-bar::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: -45%;
+  width: 34%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.34), transparent);
+  animation: dps-shimmer 2.8s linear infinite;
+}
+
+.dps-twinkle {
+  animation: dps-twinkle 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dps-float-a,
+  .dps-float-b,
+  .dps-float-c,
+  .dps-float-d,
+  .dps-float-e,
+  .dps-float-f,
+  .dps-float-g,
+  .dps-float-h,
+  .dps-ticker-track,
+  .dps-twinkle,
+  .dps-progress-bar::after {
+    animation: none !important;
+  }
+}
